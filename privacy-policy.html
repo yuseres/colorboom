@@ -14,6 +14,7 @@
   .meta { font-size: 14px; color: #888; }
   section { margin-bottom: 32px; }
   h2 { font-size: 17px; font-weight: 600; color: #1a1a18; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid #f0ece6; }
+  h3 { font-size: 15px; font-weight: 600; color: #1a1a18; margin: 16px 0 6px; }
   p { font-size: 15px; color: #444; margin-bottom: 12px; }
   ul { padding-left: 20px; margin-bottom: 12px; }
   li { font-size: 15px; color: #444; margin-bottom: 6px; }
@@ -24,7 +25,10 @@
   .notice { background: #fff8f0; border: 1px solid #f0d8b8; border-radius: 10px; padding: 16px 20px; margin-bottom: 24px; }
   .notice p { margin: 0; font-size: 14px; color: #854f0b; }
   .badge { display: inline-block; background: #e07a30; color: #fff; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 20px; margin-left: 8px; vertical-align: middle; }
+  .toc { background: #fff; border: 1px solid #e8e0d8; border-radius: 12px; padding: 20px 24px; columns: 2; column-gap: 24px; }
+  .toc li { font-size: 14px; margin-bottom: 8px; break-inside: avoid; }
   footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #e8e0d8; font-size: 13px; color: #aaa; text-align: center; }
+  @media (max-width: 480px) { .toc { columns: 1; } }
 </style>
 </head>
 <body>
@@ -33,7 +37,7 @@
   <header>
     <div class="app-name">Color Boom</div>
     <h1>Privacy Policy</h1>
-    <p class="meta">Effective date: May 20, 2026 &nbsp;·&nbsp; Last updated: June 20, 2026</p>
+    <p class="meta">Effective date: May 20, 2026 &nbsp;·&nbsp; Last updated: July 1, 2026</p>
   </header>
 
   <div class="notice">
@@ -41,12 +45,38 @@
   </div>
 
   <section>
-    <h2>Information You Provide</h2>
-    <p>The Application acquires information you supply when you download and register the Application. Registration is not mandatory, but some features may require it. The Service Provider may use this information to contact you with important notices and marketing promotions.</p>
-    <p>If you choose to set a display name for the leaderboard, that name and your score are stored and shown publicly to other players within the Application. You can change your display name at any time.</p>
+    <h2>Table of Contents</h2>
+    <ul class="toc">
+      <li><a href="#info-provided">Information You Provide</a></li>
+      <li><a href="#info-auto">Information Collected Automatically</a></li>
+      <li><a href="#advertising">Advertising</a></li>
+      <li><a href="#iap">In-App Purchases</a></li>
+      <li><a href="#location">Location</a></li>
+      <li><a href="#ai">Artificial Intelligence</a></li>
+      <li><a href="#third-party">Third-Party Access</a></li>
+      <li><a href="#international">International Data Transfers</a></li>
+      <li><a href="#legal-basis">Legal Basis for Processing (GDPR)</a></li>
+      <li><a href="#your-rights">Your Privacy Rights (GDPR / UK GDPR)</a></li>
+      <li><a href="#ccpa">California Privacy Rights (CCPA/CPRA)</a></li>
+      <li><a href="#dnt">Do Not Track</a></li>
+      <li><a href="#opt-out">Opt-Out Rights</a></li>
+      <li><a href="#retention">Data Retention &amp; Account Deletion</a></li>
+      <li><a href="#children">Children's Privacy</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#changes">Changes to This Policy</a></li>
+      <li><a href="#consent">Your Consent</a></li>
+      <li><a href="#complaints">How to File a Complaint</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
   </section>
 
-  <section>
+  <section id="info-provided">
+    <h2>Information You Provide</h2>
+    <p>The Application acquires information you supply when you download and register the Application. Registration is not mandatory, but some features may require it. The Service Provider may use this information to contact you with important notices and marketing promotions.</p>
+    <p>If you choose to set a display name for the leaderboard, that name and your weekly score are stored and displayed publicly to other players within the Application. This information is transmitted to and processed by Unity Gaming Services (UGS), which operates the leaderboard infrastructure. You can change your display name at any time from within the Application.</p>
+  </section>
+
+  <section id="info-auto">
     <h2>Information Collected Automatically</h2>
     <p>The Application may collect certain information automatically, including but not limited to:</p>
     <ul>
@@ -59,7 +89,7 @@
     </ul>
   </section>
 
-  <section>
+  <section id="advertising">
     <h2>Advertising <span class="badge">Freemium</span></h2>
     <p>The Application displays advertisements served by third-party ad networks. These networks may use device identifiers, cookies, and similar technologies to serve personalized ads based on your interests and usage. The following ad service providers may collect data:</p>
     <ul>
@@ -68,28 +98,30 @@
     <p>You may opt out of personalized advertising through your device settings: <strong>Settings → Google → Ads → Opt out of Ads Personalization</strong>.</p>
   </section>
 
-  <section>
+  <section id="iap">
     <h2>In-App Purchases <span class="badge">Freemium</span></h2>
     <p>The Application offers optional in-app purchases processed securely through Google Play. The Service Provider does not collect or store your payment information — all transactions are handled by Google Play's payment system under their own privacy policy and terms.</p>
     <p>All purchases are subject to <a href="https://play.google.com/about/play-terms/" target="_blank">Google Play's Terms of Service</a>. Refund requests are subject to Google Play's refund policy.</p>
   </section>
 
-  <section>
+  <section id="location">
     <h2>Location</h2>
     <p>This Application does not gather precise real-time location information from your mobile device.</p>
   </section>
 
-  <section>
+  <section id="ai">
     <h2>Artificial Intelligence</h2>
     <p>The Application does not use Artificial Intelligence (AI) technologies to process your data or provide features.</p>
   </section>
 
-  <section>
+  <section id="third-party">
     <h2>Third-Party Access</h2>
     <p>Only aggregated, anonymized data is periodically transmitted to external services to improve the Application. The Application uses third-party services with their own Privacy Policies:</p>
     <ul>
       <li><a href="https://www.google.com/policies/privacy/" target="_blank">Google Play Services</a></li>
-      <li><a href="https://unity3d.com/legal/privacy-policy" target="_blank">Unity</a></li>
+      <li><a href="https://policies.google.com/privacy" target="_blank">Google AdMob</a> — serves ads and may collect your Advertising ID</li>
+      <li><a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" target="_blank">Unity Gaming Services (UGS)</a> — operates the weekly leaderboard; your display name and score are stored on UGS servers</li>
+      <li><a href="https://unity3d.com/legal/privacy-policy" target="_blank">Unity Technologies</a> — crash diagnostics</li>
     </ul>
     <p>The Service Provider may disclose your information:</p>
     <ul>
@@ -97,39 +129,98 @@
       <li>When necessary to protect rights, safety, or investigate fraud</li>
       <li>With trusted service providers who have agreed to adhere to this privacy statement</li>
     </ul>
+    <p>The Service Provider does not sell your personal information to third parties.</p>
   </section>
 
-  <section>
+  <section id="international">
+    <h2>International Data Transfers</h2>
+    <p>The Application is used by players around the world, and the third-party services listed above (Google, Unity) may store and process data on servers located outside your country of residence, including in the United States. Where required, these providers rely on recognized safeguards such as Standard Contractual Clauses to protect data transferred internationally. By using the Application, you understand that your information may be transferred to and processed in countries with data protection laws different from those in your own country.</p>
+  </section>
+
+  <section id="legal-basis">
+    <h2>Legal Basis for Processing (GDPR)</h2>
+    <p>If you are located in the European Economic Area (EEA) or the United Kingdom, the Service Provider processes your personal data on the following legal bases:</p>
+    <ul>
+      <li><strong>Contract</strong> — to provide the core features of the Application you use, such as saving your progress or displaying the leaderboard.</li>
+      <li><strong>Legitimate interests</strong> — to keep the Application secure, prevent fraud, and understand how the Application is used so it can be improved.</li>
+      <li><strong>Consent</strong> — for personalized advertising, where required by your device settings or applicable law.</li>
+      <li><strong>Legal obligation</strong> — where processing is required to comply with the law.</li>
+    </ul>
+  </section>
+
+  <section id="your-rights">
+    <h2>Your Privacy Rights (GDPR / UK GDPR)</h2>
+    <p>If you are located in the EEA, UK, or a jurisdiction with similar protections, you have the right to:</p>
+    <ul>
+      <li><strong>Access</strong> the personal data the Service Provider holds about you</li>
+      <li><strong>Rectify</strong> inaccurate or incomplete data</li>
+      <li><strong>Erase</strong> your data (see <a href="#retention">Data Retention &amp; Account Deletion</a>)</li>
+      <li><strong>Restrict or object</strong> to certain processing of your data</li>
+      <li><strong>Data portability</strong> — receive a copy of your data in a structured, machine-readable format</li>
+      <li><strong>Withdraw consent</strong> at any time, where processing is based on consent (e.g. personalized ads)</li>
+      <li><strong>Lodge a complaint</strong> with a supervisory authority (see <a href="#complaints">How to File a Complaint</a>)</li>
+    </ul>
+    <p>To exercise any of these rights, contact us using the details in <a href="#contact">Contact Us</a>. We will respond to verified requests within a reasonable timeframe and in any event within the period required by applicable law.</p>
+  </section>
+
+  <section id="ccpa">
+    <h2>California Privacy Rights (CCPA/CPRA)</h2>
+    <p>If you are a California resident, you have the right to:</p>
+    <ul>
+      <li>Know what personal information is collected, used, and disclosed</li>
+      <li>Request deletion of your personal information</li>
+      <li>Opt out of the "sale" or "sharing" of personal information — the Service Provider does not sell your personal information, and does not knowingly share it for cross-context behavioral advertising beyond what is described in the <a href="#advertising">Advertising</a> section</li>
+      <li>Non-discrimination for exercising any of these rights</li>
+    </ul>
+    <p>You can submit a request by contacting us using the details in <a href="#contact">Contact Us</a>.</p>
+  </section>
+
+  <section id="dnt">
+    <h2>Do Not Track</h2>
+    <p>Some mobile operating systems and browsers include a "Do Not Track" feature. Because there is no consistent industry standard for how such signals should be interpreted, the Application does not currently respond to Do Not Track signals. You can still control ad personalization through your device's ad settings as described in the <a href="#advertising">Advertising</a> section.</p>
+  </section>
+
+  <section id="opt-out">
     <h2>Opt-Out Rights</h2>
     <p>You can stop all collection of information by uninstalling the Application using the standard uninstall process on your mobile device or via the application marketplace.</p>
   </section>
 
-  <section>
-    <h2>Data Retention</h2>
-    <p>User-provided data is retained for as long as you use the Application and for a reasonable time thereafter. Automatically collected data is retained for up to 24 months. To request deletion of your data, contact us at the email below.</p>
+  <section id="retention">
+    <h2>Data Retention &amp; Account Deletion</h2>
+    <p>User-provided data is retained for as long as you use the Application and for a reasonable time thereafter. Automatically collected data is retained for up to 24 months.</p>
+    <p>You can request deletion of your account and data at any time — either directly in the app (profile icon → Account → Delete Account) or by email. Full instructions, including what to include in your email so we can locate your account quickly, are on our <a href="delete-account.html">Account Deletion page</a>.</p>
   </section>
 
-  <section>
+  <section id="children">
     <h2>Children's Privacy</h2>
     <p>The Application does not address anyone under the age of 13. The Service Provider does not knowingly collect personally identifiable information from children under 13. If discovered, such information will be immediately deleted. Parents or guardians should contact us if they believe their child has provided personal information.</p>
   </section>
 
-  <section>
+  <section id="security">
     <h2>Security</h2>
     <p>The Service Provider provides physical, electronic, and procedural safeguards to protect your information. Access is limited to authorized employees and contractors. No security system can prevent all potential breaches, but we strive to maintain reasonable security at all times.</p>
   </section>
 
-  <section>
+  <section id="changes">
     <h2>Changes to This Policy</h2>
     <p>This Privacy Policy may be updated from time to time. Changes are effective immediately upon posting to this page. Continued use of the Application constitutes acceptance of any changes. You are advised to review this page regularly.</p>
   </section>
 
-  <section>
+  <section id="consent">
     <h2>Your Consent</h2>
     <p>By using the Application, you consent to the Service Provider processing your information as described in this Privacy Policy. "Processing" includes collecting, storing, deleting, using, combining, and disclosing information.</p>
   </section>
 
-  <section>
+  <section id="complaints">
+    <h2>How to File a Complaint</h2>
+    <p>If you have a concern or complaint about how your personal data has been handled:</p>
+    <ol>
+      <li><strong>Contact us first.</strong> Email <a href="mailto:trirongames@gmail.com">trirongames@gmail.com</a> with a description of your concern. We aim to acknowledge complaints within 7 business days and resolve them as quickly as possible.</li>
+      <li><strong>Escalate if unresolved.</strong> If you're not satisfied with our response, and you are located in the EEA or UK, you have the right to lodge a complaint with your local data protection supervisory authority. If you are located elsewhere, you may contact the consumer protection or data protection authority applicable in your jurisdiction, or the app marketplace (Google Play) support channel.</li>
+    </ol>
+  </section>
+
+  <section id="contact">
     <h2>Contact Us</h2>
     <p>If you have any questions regarding privacy while using the Application, please contact:</p>
     <div class="contact-box">
