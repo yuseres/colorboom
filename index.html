@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TrironGames — Cozy, colorful games</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/site.css" />
+<style>
+  /* Home-page-only styles */
+  .home-hero { padding: clamp(70px, 10vw, 120px) 0 clamp(40px, 6vw, 70px); text-align: center; }
+  .home-hero .mark-big {
+    width: 96px; height: 96px; border-radius: 26px; margin: 0 auto 26px;
+    background: linear-gradient(150deg, var(--primary-2), var(--primary));
+    display: grid; place-items: center; font-size: 50px; color: #fff;
+    box-shadow: var(--shadow-pop); transform: rotate(-5deg);
+  }
+  .home-hero h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); }
+  .home-hero .tag {
+    margin: 20px auto 0; max-width: 46ch; font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+    color: var(--ink-2); font-weight: 600;
+  }
+  .home-hero .actions { display: flex; gap: 14px; justify-content: center; margin-top: 30px; flex-wrap: wrap; }
+
+  .games-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+  .game-card {
+    display: grid; grid-template-columns: 1fr 1.15fr; align-items: stretch;
+    border-radius: var(--r-xl); overflow: hidden; box-shadow: var(--shadow-lg);
+    background: var(--bg-2);
+  }
+  .game-card .shot { position: relative; background: var(--card-2); display: grid; place-items: center; padding: 30px; }
+  .game-card .shot img { border-radius: 26px; box-shadow: var(--shadow-md); border: 4px solid #fff; max-height: 380px; }
+  .game-card .info { padding: clamp(30px, 4vw, 52px); display: flex; flex-direction: column; gap: 16px; justify-content: center; align-items: flex-start; }
+  .game-card .icon-row { display: flex; align-items: center; gap: 12px; }
+  .game-card .icon-row .mini-mark {
+    width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; font-size: 24px; color: #fff;
+    background: linear-gradient(150deg, var(--primary-2), var(--primary)); box-shadow: var(--shadow-pop);
+  }
+  .game-card h3 { font-size: clamp(1.6rem, 2.6vw, 2.2rem); }
+  .game-card p.blurb { color: var(--ink-2); font-size: 1.05rem; max-width: 40ch; }
+  .game-card .learn { font-family: var(--font-display); font-weight: 700; font-size: 15.5px; display: inline-flex; align-items: center; gap: 8px; }
+  .game-card .learn:hover .arrow { transform: translateX(3px); }
+  .game-card .arrow { transition: transform .2s; }
+  @media (max-width: 800px) { .game-card { grid-template-columns: 1fr; } }
+
+  /* Who we are (studio) */
+  .who { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .who-pill {
+    position: relative; display: inline-flex; align-items: center; justify-content: center;
+    padding: 16px 46px; border-radius: 999px; margin-bottom: clamp(28px, 4vw, 44px);
+    background: linear-gradient(180deg, #ffffff, var(--card-2));
+    box-shadow: var(--shadow-md); border: 1px solid var(--line);
+    font-family: var(--font-display); font-weight: 800; color: var(--primary);
+    font-size: clamp(1.6rem, 3.2vw, 2.4rem); letter-spacing: -.01em; z-index: 1; white-space: nowrap;
+  }
+  .who-pill .puff { position: absolute; background: #fff; border-radius: 50%; box-shadow: var(--shadow-sm); z-index: -1; }
+  .who-pill .p1 { width: 44px; height: 44px; left: -16px; top: 8px; }
+  .who-pill .p2 { width: 32px; height: 32px; left: 8px; bottom: -10px; }
+  .who-pill .p3 { width: 48px; height: 48px; right: -18px; bottom: 2px; }
+  .who-pill .p4 { width: 28px; height: 28px; right: 16px; top: -10px; }
+  .who-story {
+    max-width: 60ch; margin: 0 auto clamp(40px, 5vw, 60px);
+    font-size: clamp(1.05rem, 1.6vw, 1.28rem); line-height: 1.7; font-weight: 600; color: var(--ink);
+    text-wrap: pretty;
+  }
+  .who-story .hl { color: var(--primary); font-weight: 800; }
+  .who-member { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .who-av-ring { padding: 6px; background: #fff; border-radius: 50%; box-shadow: var(--shadow-md); }
+  .who-av-ring img { display: block; width: 140px; height: 140px; border-radius: 50%; object-fit: cover; background: var(--card-2); }
+  .who-member b { font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; color: var(--ink); }
+  .who-member small { font-weight: 800; font-size: .98rem; color: var(--primary); }
+  .who-foot { margin-top: clamp(30px, 4vw, 46px); font-weight: 700; color: var(--ink-2); font-size: 1rem; }
+  .who-foot b { color: var(--ink); font-weight: 800; }
+</style>
+<template id="__bundler_thumbnail">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<rect width="100" height="100" fill="#FBF2EC"/>
+<rect x="30" y="30" width="40" height="40" rx="12" fill="#F97A2E"/>
+<circle cx="50" cy="50" r="9" fill="#fff"/>
+</svg>
+</template>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <div class="nav-inner">
+      <a class="site-brand" href="#top">
+        <span class="mark">🎮</span>
+        <span>TrironGames</span>
+      </a>
+      <div class="site-nav-links">
+        <a href="#games">Games</a>
+        <a href="#studio">Studio</a>
+        <a href="legal/index.html">Legal</a>
+        <a href="mailto:trirongames@gmail.com">Contact</a>
+        <a class="cta" href="games/color-boom/index.html">Play Color Boom</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<header class="home-hero wrap" id="top">
+  <div class="mark-big">🎮</div>
+  <h1>TrironGames</h1>
+  <p class="tag">Cozy, colorful games made by a very small team — starting with Color Boom.</p>
+  <div class="actions">
+    <a class="btn btn-primary" href="games/color-boom/index.html">Explore Color Boom</a>
+    <a class="btn btn-ghost" href="#studio">Who we are</a>
+  </div>
+</header>
+
+<section class="section" id="games">
+  <div class="wrap">
+    <div style="max-width:620px; margin-bottom: 40px;">
+      <span class="eyebrow">Our games</span>
+      <h2 style="font-size:clamp(1.9rem,3.6vw,2.8rem); margin-top:14px;">One game so far. More on the way.</h2>
+    </div>
+    <div class="games-grid">
+      <div class="game-card">
+        <div class="shot">
+          <img src="games/color-boom/assets/screens/library.png" alt="Color Boom art library screenshot" />
+        </div>
+        <div class="info">
+          <div class="icon-row">
+            <div class="mini-mark">🎨</div>
+            <h3>Color Boom</h3>
+          </div>
+          <p class="blurb">The cozy color-by-number game where every tile you fill bursts into art. Paint, collect rewards, and climb the weekly ranks.</p>
+          <a class="learn" href="games/color-boom/index.html">Learn more <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="studio" style="padding-top:0;">
+  <div class="wrap">
+    <div class="who">
+      <div class="who-pill">
+        <span class="puff p1"></span><span class="puff p2"></span>
+        <span class="puff p3"></span><span class="puff p4"></span>
+        Who we are
+      </div>
+      <p class="who-story">
+        TrironGames <span class="hl">started as a joke</span> — a not-so-serious
+        “what if we just made a game?” that refused to go away. We kept poking at it,
+        one scrappy prototype at a time, until it stuck. Now making games is simply
+        <span class="hl">part of how we spend our time</span>, and Color Boom is
+        the first thing we're proud enough to share. This is only the beginning.
+      </p>
+      <div class="who-member">
+        <div class="who-av-ring"><img src="assets/claudiu.png" alt="Claudiu Tănasă" /></div>
+        <b>Claudiu Tănasă</b>
+        <small>Dev / Creator</small>
+      </div>
+      <p class="who-foot">That's the whole crew — <b>for now.</b> 👋</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="site-brand" href="#top">
+          <span class="mark">🎮</span>
+          <span>TrironGames</span>
+        </a>
+        <p>Cozy, colorful games — starting with Color Boom.</p>
+      </div>
+      <div>
+        <h5>Game</h5>
+        <ul>
+          <li><a href="games/color-boom/index.html">Color Boom</a></li>
+          <li><a href="games/color-boom/index.html#features">Features</a></li>
+          <li><a href="games/color-boom/index.html#download">Download</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Studio</h5>
+        <ul>
+          <li><a href="#studio">About us</a></li>
+          <li><a href="#studio">Careers</a></li>
+          <li><a href="#studio">Press kit</a></li>
+          <li><a href="mailto:trirongames@gmail.com">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="legal/privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="legal/terms.html">Terms</a></li>
+          <li><a href="legal/delete-account.html">Delete Account</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <span>© 2026 TrironGames. Made with 🎨 and a lot of coffee.</span>
+      <span>trirongames@gmail.com</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

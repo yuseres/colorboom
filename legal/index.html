@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Legal — TrironGames</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/site.css" />
+<style>
+  .legal-hero { padding: clamp(50px,7vw,80px) 0 20px; }
+  .legal-hero h1 { font-size: clamp(2rem,4vw,2.8rem); }
+  .legal-list { display: grid; gap: 14px; margin-top: 30px; }
+  .legal-list a {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    background: var(--card); border: 1px solid var(--line); border-radius: var(--r-md);
+    padding: 20px 26px; box-shadow: var(--shadow-sm); color: var(--ink); font-weight: 700;
+    font-family: var(--font-display); font-size: 1.05rem; transition: transform .2s;
+  }
+  .legal-list a:hover { transform: translateY(-2px); color: var(--ink); }
+  .legal-list .arrow { color: var(--primary); }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <div class="nav-inner">
+      <a class="site-brand" href="../index.html">
+        <span class="mark">🎮</span>
+        <span>TrironGames</span>
+      </a>
+      <div class="site-nav-links">
+        <a href="../index.html#games">Games</a>
+        <a href="../index.html#studio">Studio</a>
+        <a href="mailto:trirongames@gmail.com">Contact</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<header class="legal-hero wrap">
+  <span class="eyebrow">Legal</span>
+  <h1 style="margin-top:14px;">Policies &amp; documents</h1>
+  <p style="color:var(--ink-2); font-size:1.05rem; margin-top:10px; max-width:52ch;">Everything about how Color Boom and TrironGames handle your data and the terms of using our apps.</p>
+  <div class="legal-list">
+    <a href="privacy-policy.html">Privacy Policy <span class="arrow">→</span></a>
+    <a href="terms.html">Terms &amp; Conditions <span class="arrow">→</span></a>
+    <a href="delete-account.html">Delete Account <span class="arrow">→</span></a>
+  </div>
+</header>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bot">
+      <span>© 2026 TrironGames. All rights reserved.</span>
+      <span>trirongames@gmail.com</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

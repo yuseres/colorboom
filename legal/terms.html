@@ -4,43 +4,60 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Terms & Conditions — Color Boom</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #faf9f7; color: #2c2c2a; line-height: 1.7; padding: 0 16px 60px; }
-  .wrap { max-width: 720px; margin: 0 auto; }
-  header { padding: 48px 0 32px; border-bottom: 1px solid #e8e0d8; margin-bottom: 36px; }
-  .app-name { font-size: 13px; font-weight: 600; letter-spacing: .6px; text-transform: uppercase; color: #e07a30; margin-bottom: 8px; }
-  h1 { font-size: 28px; font-weight: 600; color: #1a1a18; margin-bottom: 8px; }
-  .meta { font-size: 14px; color: #888; }
+  * { box-sizing: border-box; }
+  body { font-family: var(--font-body); background: var(--bg); color: var(--ink); line-height: 1.7; margin:0; }
+  .legal-wrap { max-width: 760px; margin: 0 auto; padding: 0 20px 60px; }
+  .legal-page-header { padding: 44px 0 30px; border-bottom: 1px solid var(--line); margin-bottom: 36px; }
+  .app-name { font-family: var(--font-display); font-size: 13px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; color: var(--primary); margin-bottom: 8px; }
+  .legal-page-header h1 { font-size: 30px; margin-bottom: 8px; }
+  .meta { font-size: 14px; color: var(--ink-2); font-weight: 700; }
   section { margin-bottom: 32px; }
-  h2 { font-size: 17px; font-weight: 600; color: #1a1a18; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid #f0ece6; }
-  h3 { font-size: 15px; font-weight: 600; color: #1a1a18; margin: 16px 0 6px; }
-  p { font-size: 15px; color: #444; margin-bottom: 12px; }
+  h2 { font-family: var(--font-display); font-size: 18px; font-weight: 700; color: var(--ink); margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+  h3 { font-family: var(--font-display); font-size: 15.5px; font-weight: 700; color: var(--ink); margin: 16px 0 6px; }
+  p { font-size: 15.5px; color: var(--ink); font-weight: 500; margin-bottom: 12px; }
   ul, ol { padding-left: 20px; margin-bottom: 12px; }
-  li { font-size: 15px; color: #444; margin-bottom: 6px; }
-  a { color: #e07a30; text-decoration: none; }
+  li { font-size: 15.5px; color: var(--ink); font-weight: 500; margin-bottom: 6px; }
+  a { color: var(--primary); text-decoration: none; font-weight: 700; }
   a:hover { text-decoration: underline; }
-  .contact-box { background: #fff; border: 1px solid #e8e0d8; border-radius: 12px; padding: 20px 24px; margin-top: 8px; }
+  .contact-box { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px 24px; margin-top: 8px; box-shadow: var(--shadow-sm); }
   .contact-box p { margin: 0; }
-  .notice { background: #fff8f0; border: 1px solid #f0d8b8; border-radius: 10px; padding: 16px 20px; margin-bottom: 24px; }
-  .notice p { margin: 0; font-size: 14px; color: #854f0b; }
-  .badge { display: inline-block; background: #e07a30; color: #fff; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 20px; margin-left: 8px; vertical-align: middle; }
-  .toc { background: #fff; border: 1px solid #e8e0d8; border-radius: 12px; padding: 20px 24px; columns: 2; column-gap: 24px; }
+  .notice { background: var(--card-2); border: 1px solid var(--line); border-radius: 14px; padding: 16px 20px; margin-bottom: 24px; }
+  .notice p { margin: 0; font-size: 14.5px; color: var(--ink); }
+  .badge { display: inline-block; background: var(--primary); color: #fff; font-size: 11px; font-weight: 700; padding: 2px 9px; border-radius: 20px; margin-left: 8px; vertical-align: middle; }
+  .toc { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px 24px; columns: 2; column-gap: 24px; box-shadow: var(--shadow-sm); }
   .toc li { font-size: 14px; margin-bottom: 8px; break-inside: avoid; }
-  footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #e8e0d8; font-size: 13px; color: #aaa; text-align: center; }
+  .toc a { font-weight: 700; }
   @media (max-width: 480px) { .toc { columns: 1; } }
 </style>
 </head>
 <body>
-<div class="wrap">
 
-  <header>
+<nav class="site-nav">
+  <div class="wrap">
+    <div class="nav-inner">
+      <a class="site-brand" href="../index.html">
+        <span class="mark">🎮</span>
+        <span>TrironGames</span>
+      </a>
+      <div class="site-nav-links">
+        <a href="../index.html#games">Games</a>
+        <a href="../index.html#studio">Studio</a>
+        <a href="../legal/index.html">Legal</a>
+        <a href="mailto:trirongames@gmail.com">Contact</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="legal-wrap">
+  <header class="legal-page-header">
     <div class="app-name">Color Boom</div>
     <h1>Terms &amp; Conditions</h1>
     <p class="meta">Effective date: May 20, 2026 &nbsp;·&nbsp; Last updated: July 1, 2026</p>
   </header>
-
-  <div class="notice">
+<div class="notice">
     <p>By downloading or using the Application, you automatically agree to these terms. Please read them carefully before using Color Boom.</p>
   </div>
 
@@ -209,11 +226,15 @@
       📧 <a href="mailto:trirongames@gmail.com">trirongames@gmail.com</a></p>
     </div>
   </section>
-
-  <footer>
-    <p>© 2026 Claudiu Tanasa · Color Boom · All rights reserved</p>
-  </footer>
-
 </div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bot">
+      <span>© 2026 TrironGames. All rights reserved.</span>
+      <span><a href="index.html">← All legal documents</a></span>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
