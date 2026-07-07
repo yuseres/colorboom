@@ -151,11 +151,12 @@ body.no-confetti .dot, body.no-confetti .sq { display: none; }
 .brand { display: flex; align-items: center; gap: 11px; font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: 21px; letter-spacing: -.01em; }
 .brand .mark {
   width: 38px; height: 38px; border-radius: 12px;
-  background: linear-gradient(150deg, var(--primary-2), var(--primary));
+  overflow: hidden;
   display: grid; place-items: center; font-size: 21px;
   box-shadow: var(--shadow-pop); transform: rotate(-6deg);
   transition: transform .3s cubic-bezier(.34,1.56,.64,1);
 }
+.brand .mark img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .brand:hover .mark { transform: rotate(6deg) scale(1.06); }
 .brand small { font-family:"Nunito",sans-serif; font-weight:800; font-size:9px; letter-spacing:.16em; color: var(--ink-2); display:block; margin-top:-3px; text-transform:uppercase; }
 .back-link { font-weight: 800; font-size: 13.5px; color: var(--ink-2); padding: 9px 14px 9px 4px; border-radius: 999px; transition: .2s; white-space: nowrap; }
@@ -246,74 +247,18 @@ body.no-confetti .dot, body.no-confetti .sq { display: none; }
 .hero-meta .mt { font-size: 14px; color: var(--ink-2); font-weight: 700; }
 .hero-meta .mt b { color: var(--ink); }
 
-/* Variant A — Spotlight: text left, phone right + floating cards */
-.heroA { display: grid; grid-template-columns: 1.05fr 1fr; gap: 40px; align-items: center; }
-.heroA .copy { display: flex; flex-direction: column; gap: 26px; align-items: flex-start; }
-.heroA-stage { position: relative; min-height: 600px; display: grid; place-items: center; }
-.heroA-stage .main { width: 300px; position: relative; z-index: 2; }
-.heroA-stage .sidecard { position: absolute; width: 168px; z-index: 1; }
-.heroA-stage .sc1 { top: 8%; left: -6%; }
-.heroA-stage .sc2 { bottom: 2%; right: -4%; }
-.heroA-stage .puck {
-  position: absolute; z-index: 4; background: var(--card); border-radius: 20px;
-  box-shadow: var(--shadow-md); padding: 13px 17px; display: flex; align-items: center; gap: 11px;
-  font-family: "Baloo 2", sans-serif; font-weight: 700; border: 1px solid var(--line);
-}
-.puck .pi { font-size: 24px; }
-.puck small { display: block; font-family: "Nunito",sans-serif; font-weight: 700; font-size: 11px; color: var(--ink-2); }
-.puck b { font-size: 19px; line-height: 1; }
-
-/* Variant B — Stack: centered text, fan of phones below */
-.heroB { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 28px; }
-.heroB .copy { display: flex; flex-direction: column; align-items: center; gap: 22px; }
-.heroB h1 { font-size: clamp(2.5rem, 5.6vw, 4.7rem); width: 100%; text-wrap: balance; }
-.heroB .hero-sub { max-width: 46ch; }
-.heroB-fan { position: relative; width: 100%; height: clamp(360px, 44vw, 540px); margin-top: 14px; }
-.heroB-fan .screen { position: absolute; left: 50%; bottom: -8%; }
-.heroB-fan .f0 { width: 250px; transform: translateX(-50%) rotate(0deg); z-index: 5; }
-.heroB-fan .f1 { width: 215px; transform: translateX(-128%) rotate(-11deg); z-index: 3; }
-.heroB-fan .f2 { width: 215px; transform: translateX(28%) rotate(11deg); z-index: 3; }
-.heroB-fan .f3 { width: 188px; transform: translateX(-200%) rotate(-19deg); z-index: 1; opacity: .96; }
-.heroB-fan .f4 { width: 188px; transform: translateX(100%) rotate(19deg); z-index: 1; opacity: .96; }
-
-/* Variant C — Split: colored panel left, collage right */
-.heroC { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-radius: var(--r-xl); overflow: hidden; box-shadow: var(--shadow-lg); min-height: 600px; }
-.heroC .panel {
-  background: linear-gradient(160deg, var(--primary-2), var(--primary));
-  color: #fff; padding: clamp(34px, 4.5vw, 64px); display: flex; flex-direction: column;
-  justify-content: center; gap: 26px; position: relative; overflow: hidden;
-}
-.heroC .panel .eyebrow { color: #fff; }
-.heroC .panel .eyebrow::before { background: #fff; }
-.heroC .panel h1 { color: #fff; font-size: clamp(2.2rem, 4vw, 3.7rem); }
-.heroC .panel h1 .pop { color: #fff; }
-.heroC .panel .hero-sub { color: rgba(255,255,255,.92); }
-.heroC .panel .badge { background: rgba(0,0,0,.22); backdrop-filter: blur(4px); }
-.heroC .collage {
-  position: relative; background: var(--band); padding: 30px;
-  display: grid; place-items: center; overflow: hidden;
-}
-.heroC .collage .screen { width: 232px; z-index: 2; }
-.heroC .collage .mini { position: absolute; width: 150px; z-index: 1; }
-.heroC .collage .m1 { top: 6%; right: 8%; }
-.heroC .collage .m2 { bottom: 5%; left: 7%; }
-@media (max-width: 900px){
-  .heroA, .heroC { grid-template-columns: 1fr; }
-  .heroC { min-height: 0; }
-  .heroA-stage { min-height: 520px; margin-top: 10px; }
-}
-
-/* Variant D — Headliner */
+/* Headliner hero */
 .heroD { display: grid; grid-template-columns: 1.02fr .98fr; gap: clamp(30px, 4vw, 56px); align-items: center; min-height: calc(100vh - 96px); }
 .heroD .copy { display: flex; flex-direction: column; align-items: flex-start; gap: clamp(16px, 2vw, 24px); }
 .hd-top { display: flex; align-items: center; gap: 18px; }
 .app-icon {
   width: clamp(76px, 8vw, 96px); height: clamp(76px, 8vw, 96px); border-radius: 24px;
-  background: linear-gradient(150deg, var(--primary-2), var(--primary));
+  overflow: hidden;
   display: grid; place-items: center; font-size: clamp(40px, 4.5vw, 52px);
   box-shadow: var(--shadow-pop); transform: rotate(-5deg);
   transition: transform .35s cubic-bezier(.34,1.56,.64,1);
 }
+.app-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .app-icon:hover { transform: rotate(5deg) scale(1.05); }
 .trailer {
   display: inline-flex; align-items: center; gap: 12px;
@@ -370,27 +315,6 @@ body.no-confetti .dot, body.no-confetti .sq { display: none; }
 .scroll-cue .chev { width: 46px; height: 46px; border-radius: 50%; background: var(--card); border: 1px solid var(--line); box-shadow: var(--shadow-md); display: grid; place-items: center; font-size: 26px; line-height: 0; padding-bottom: 8px; color: var(--primary); }
 @keyframes cueBob { 0%,100%{ transform: translateX(-50%) translateY(0);} 50%{ transform: translateX(-50%) translateY(8px);} }
 @media (prefers-reduced-motion: reduce){ .scroll-cue { animation: none; } }
-
-/* ---------- Hero variant switcher (design control) ---------- */
-.variant-switch {
-  position: fixed; left: 50%; transform: translateX(-50%);
-  bottom: 22px; z-index: 200;
-  display: flex; align-items: center; gap: 4px; padding: 6px;
-  background: color-mix(in srgb, var(--card) 86%, transparent);
-  -webkit-backdrop-filter: blur(18px) saturate(160%); backdrop-filter: blur(18px) saturate(160%);
-  border: 1px solid var(--line-2); border-radius: 999px; box-shadow: var(--shadow-md);
-}
-.variant-switch .vs-label { font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); padding: 0 10px 0 12px; }
-.variant-switch button {
-  border: none; background: transparent; color: var(--ink-2);
-  font-family: "Baloo 2", sans-serif; font-weight: 700; font-size: 13.5px;
-  padding: 8px 16px; border-radius: 999px; transition: .22s; display: flex; align-items: center; gap: 7px;
-}
-.variant-switch button .n { width: 18px; height: 18px; border-radius: 50%; background: var(--line-2); color: var(--ink-2); display: grid; place-items: center; font-size: 11px; }
-.variant-switch button:hover { color: var(--ink); }
-.variant-switch button.on { color: var(--primary-ink); background: linear-gradient(150deg, var(--primary-2), var(--primary)); box-shadow: var(--shadow-pop); }
-.variant-switch button.on .n { background: rgba(255,255,255,.3); color: #fff; }
-@media (max-width: 560px){ .variant-switch .vs-label { display: none; } .variant-switch button { padding: 8px 12px; } }
 
 /* ============================================================
    MARQUEE / PROOF

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="72%">
+      <stop offset="0%" stop-color="#FFFCFA"/>
+      <stop offset="100%" stop-color="#FBE2CB"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#bg)"/>
+
+  <g transform="translate(300,300)">
+    <!-- outer petal ring -->
+    <g>
+      <path id="petalOuter" d="M0,-230 C40,-170 40,-70 0,-30 C-40,-70 -40,-170 0,-230 Z" fill="#9B7BE0" opacity=".92"/>
+      <use href="#petalOuter" transform="rotate(30)"/>
+      <use href="#petalOuter" transform="rotate(60)" fill="#4FA6F0"/>
+      <use href="#petalOuter" transform="rotate(90)"/>
+      <use href="#petalOuter" transform="rotate(120)" fill="#4FA6F0"/>
+      <use href="#petalOuter" transform="rotate(150)"/>
+      <use href="#petalOuter" transform="rotate(180)" fill="#4FA6F0"/>
+      <use href="#petalOuter" transform="rotate(210)"/>
+      <use href="#petalOuter" transform="rotate(240)" fill="#4FA6F0"/>
+      <use href="#petalOuter" transform="rotate(270)"/>
+      <use href="#petalOuter" transform="rotate(300)" fill="#4FA6F0"/>
+      <use href="#petalOuter" transform="rotate(330)"/>
+    </g>
+
+    <circle r="175" fill="none" stroke="#FFFCFA" stroke-width="6"/>
+
+    <!-- middle petal ring -->
+    <g>
+      <path id="petalMid" d="M0,-150 C28,-110 28,-46 0,-18 C-28,-46 -28,-110 0,-150 Z" fill="#F3789C"/>
+      <use href="#petalMid" transform="rotate(45)" fill="#F2A93B"/>
+      <use href="#petalMid" transform="rotate(90)"/>
+      <use href="#petalMid" transform="rotate(135)" fill="#F2A93B"/>
+      <use href="#petalMid" transform="rotate(180)"/>
+      <use href="#petalMid" transform="rotate(225)" fill="#F2A93B"/>
+      <use href="#petalMid" transform="rotate(270)"/>
+      <use href="#petalMid" transform="rotate(315)" fill="#F2A93B"/>
+    </g>
+
+    <circle r="95" fill="#FFFCFA"/>
+    <circle r="95" fill="none" stroke="#F97A2E" stroke-width="5"/>
+
+    <!-- inner star -->
+    <g>
+      <path id="petalIn" d="M0,-78 C16,-52 16,-22 0,-8 C-16,-22 -16,-52 0,-78 Z" fill="#5FBE6B"/>
+      <use href="#petalIn" transform="rotate(60)" fill="#F97A2E"/>
+      <use href="#petalIn" transform="rotate(120)"/>
+      <use href="#petalIn" transform="rotate(180)" fill="#F97A2E"/>
+      <use href="#petalIn" transform="rotate(240)"/>
+      <use href="#petalIn" transform="rotate(300)" fill="#F97A2E"/>
+    </g>
+
+    <circle r="30" fill="#F97A2E"/>
+    <circle r="30" fill="none" stroke="#FFFCFA" stroke-width="4"/>
+    <circle r="10" fill="#FFFCFA"/>
+  </g>
+</svg>

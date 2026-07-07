@@ -7,7 +7,7 @@ function Nav() {
         <div className="nav-inner">
           <a className="back-link" href="../../index.html">← TrironGames</a>
           <a className="brand" href="#top">
-            <span className="mark">🎨</span>
+            <span className="mark"><img src="assets/logo.png" alt="" /></span>
             <span>Color Boom</span>
           </a>
           <div className="nav-links">
@@ -149,7 +149,7 @@ function CTA() {
 function Footer() {
   const cols = [
   { h: "Game", links: [["Features", "#features"], ["Canvases", "#features"], ["Daily rewards", "#game"], ["Leaderboards", "#game"]] },
-  { h: "Studio", links: [["About us", "../../index.html#studio"], ["Careers", "../../index.html#studio"], ["Press kit", "../../index.html#studio"], ["Contact", "mailto:trirongames@gmail.com"]] },
+  { h: "Studio", links: [["About us", "../../index.html#studio"], ["Contact", "mailto:trirongames@gmail.com"]] },
   { h: "Legal", links: [["Privacy Policy", "../../legal/privacy-policy.html"], ["Terms", "../../legal/terms.html"], ["Delete Account", "../../legal/delete-account.html"]] }];
 
   return (
@@ -158,15 +158,14 @@ function Footer() {
         <div className="footer-top">
           <div className="footer-brand">
             <a className="brand" href="../../index.html">
-              <span className="mark">🎨</span>
+              <span className="mark"><img src="assets/logo.png" alt="" /></span>
               <span>TrironGames<small>Studio</small></span>
             </a>
             <p>The cozy color-by-number game where every tile bursts into art.</p>
             <div className="socials">
-              <a href="#" aria-label="Instagram">📷</a>
-              <a href="#" aria-label="TikTok">🎵</a>
-              <a href="#" aria-label="Facebook">👍</a>
-              <a href="#" aria-label="YouTube">▶️</a>
+              <a href={window.SOCIALS.instagram} target="_blank" rel="noopener" aria-label="Instagram">📷</a>
+              <a href={window.SOCIALS.tiktok} target="_blank" rel="noopener" aria-label="TikTok">🎵</a>
+              <a href={window.SOCIALS.facebook} target="_blank" rel="noopener" aria-label="Facebook">👍</a>
             </div>
           </div>
           {cols.map((c, i) =>

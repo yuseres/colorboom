@@ -2,6 +2,13 @@
 
 const S = "assets/screens/"; // screen path prefix
 
+const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.colorboom.yuser";
+const SOCIALS = {
+  instagram: "https://www.instagram.com/colorboomers",
+  facebook: "https://www.facebook.com/profile.php?id=61589805556275",
+  tiktok: "https://www.tiktok.com/@trirongames",
+};
+
 // A floating app-screen card (cropped real screen)
 function Screen({ src, className = "", style, alt = "" }) {
   return (
@@ -15,11 +22,7 @@ function Screen({ src, className = "", style, alt = "" }) {
 function AppBadges({ className = "" }) {
   return (
     <div className={"badges " + className}>
-      <a className="badge" href="#download" aria-label="Download on the App Store">
-        <span className="gi"></span>
-        <span className="bt"><small>Download on the</small><b>App Store</b></span>
-      </a>
-      <a className="badge" href="#download" aria-label="Get it on Google Play">
+      <a className="badge" href={PLAY_STORE_URL} target="_blank" rel="noopener" aria-label="Get it on Google Play">
         <span className="gi">▶</span>
         <span className="bt"><small>Get it on</small><b>Google Play</b></span>
       </a>
@@ -95,4 +98,4 @@ function DevAvatar({ style }) {
   );
 }
 
-Object.assign(window, { Screen, AppBadges, Eyebrow, Confetti, HUES, FEATURES, DevAvatar });
+Object.assign(window, { Screen, AppBadges, Eyebrow, Confetti, HUES, FEATURES, DevAvatar, PLAY_STORE_URL, SOCIALS });

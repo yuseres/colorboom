@@ -1,4 +1,4 @@
-/* app.jsx — root: theme + highlight + hero variant + reveal + tweaks */
+/* app.jsx — root: theme + highlight + reveal + tweaks */
 
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "theme": "petal",
@@ -14,29 +14,8 @@ const HL2 = {
   "#9B6BE0": "#B083EE", // purple
 };
 
-const VARIANTS = [
-  { id: "d", label: "Headliner" },
-  { id: "a", label: "Spotlight" },
-  { id: "b", label: "Stack" },
-  { id: "c", label: "Split" },
-];
-
-function VariantSwitch({ value, onChange }) {
-  return (
-    <div className="variant-switch" role="tablist" aria-label="Hero layout">
-      <span className="vs-label">Hero layout</span>
-      {VARIANTS.map((v, i) => (
-        <button key={v.id} className={value === v.id ? "on" : ""} onClick={() => onChange(v.id)} role="tab" aria-selected={value === v.id}>
-          <span className="n">{i + 1}</span>{v.label}
-        </button>
-      ))}
-    </div>
-  );
-}
-
 function App() {
   const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
-  const [variant, setVariant] = React.useState(() => localStorage.getItem("cb_variant") || "d");
 
   // theme
   React.useEffect(() => { document.documentElement.setAttribute("data-theme", t.theme); }, [t.theme]);
@@ -52,22 +31,18 @@ function App() {
   }, [t.highlight]);
   // confetti
   React.useEffect(() => { document.body.classList.toggle("no-confetti", !t.confetti); }, [t.confetti]);
-  // persist variant
-  React.useEffect(() => { localStorage.setItem("cb_variant", variant); }, [variant]);
 
   return (
     <>
       <div className="bg-decor"><i className="blob-a" /><i className="blob-b" /><i className="blob-c" /><i className="blob-d" /></div>
 
       <Nav />
-      <Hero variant={variant} />
+      <Hero />
       <Proof />
       <Features />
       <Gamification />
       <CTA />
       <Footer />
-
-      <VariantSwitch value={variant} onChange={setVariant} />
 
       <TweaksPanel>
         <TweakSection label="Theme" />
