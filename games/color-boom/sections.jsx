@@ -5,7 +5,7 @@ function Nav() {
     <nav className="nav">
       <div className="wrap">
         <div className="nav-inner">
-          <a className="back-link" href="../../index.html">← TrironGames</a>
+          <a className="back-link" href="../../index.html">← <span className="back-label">TrironGames</span></a>
           <a className="brand" href="#top">
             <span className="mark"><img src="assets/logo.png" alt="" /></span>
             <span>Color Boom</span>
