@@ -24,10 +24,10 @@ function Nav() {
 
 function Proof() {
   const items = [
-  { big: "10M+", lbl: "Downloads\nworldwide" },
-  { big: "4.9★", lbl: "App Store\nrating" },
   { big: "1,200+", lbl: "Canvases\nto paint" },
-  { big: "#1", lbl: "Casual art\ngames, 12 mkts" }];
+  { big: "5", lbl: "Themes &\nfill effects" },
+  { big: "Weekly", lbl: "New canvas\ndrops" },
+  { big: "Solo", lbl: "Indie-made\nwith ❤" }];
 
   return (
     <section className="proof reveal">

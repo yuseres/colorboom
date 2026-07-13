@@ -16,7 +16,7 @@ function HeroD() {
         <h1 className="wordmark">Color<br /><span className="pop">Boom</span></h1>
         <p className="hd-tag">
           Unwind with the cozy color-by-number game where every tile you fill bursts into art.
-          <br />Join millions of painters enjoying it daily!
+          <br />Built solo, with a lot of coffee and zero rush.
         </p>
         <AppBadges className="hd-badges" />
         <div className="hd-follow">

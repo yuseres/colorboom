@@ -10,20 +10,53 @@
 <link rel="stylesheet" href="assets/site.css" />
 <style>
   /* Home-page-only styles */
-  .home-hero { padding: clamp(70px, 10vw, 120px) 0 clamp(40px, 6vw, 70px); text-align: center; }
+  .home-hero {
+    padding: clamp(80px, 11vw, 130px) 0 clamp(60px, 8vw, 100px); text-align: center;
+    background: linear-gradient(165deg, var(--primary) 0%, var(--primary-2) 55%, #F2A93B 100%);
+    border-radius: 0 0 var(--r-xl) var(--r-xl);
+    color: #fff;
+  }
   .home-hero .mark-big {
     width: 96px; height: 96px; border-radius: 26px; margin: 0 auto 26px;
     overflow: hidden;
     display: grid; place-items: center; font-size: 50px; color: #fff;
-    box-shadow: var(--shadow-pop); transform: rotate(-5deg);
+    box-shadow: 0 16px 32px -10px rgba(0,0,0,.28); transform: rotate(-5deg);
   }
   .home-hero .mark-big img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .home-hero h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); }
+  .home-hero h1 { font-size: clamp(3.1rem, 7.6vw, 6.6rem); color: #fff; text-shadow: 0 5px 0 rgba(0,0,0,.12); }
   .home-hero .tag {
     margin: 20px auto 0; max-width: 46ch; font-size: clamp(1.05rem, 1.6vw, 1.3rem);
-    color: var(--ink-2); font-weight: 600;
+    color: rgba(255,255,255,.92); font-weight: 600;
   }
   .home-hero .actions { display: flex; gap: 14px; justify-content: center; margin-top: 30px; flex-wrap: wrap; }
+  .home-hero .btn-primary { background: #fff; color: var(--primary); box-shadow: 0 16px 32px -10px rgba(0,0,0,.28); }
+  .home-hero .btn-primary:hover { color: var(--primary-2); }
+  .home-hero .btn-ghost { background: rgba(255,255,255,.16); color: #fff; border-color: rgba(255,255,255,.4); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+  .home-hero .btn-ghost:hover { background: rgba(255,255,255,.24); color: #fff; }
+
+  /* Dev log — dark contrasting band, horizontal scroll-snap cards */
+  .devlog-band { background: var(--ink); padding: clamp(56px, 8vw, 100px) 0; margin-top: clamp(56px, 8vw, 100px); }
+  .devlog-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 32px; flex-wrap: wrap; }
+  .devlog-nav { display: flex; gap: 10px; }
+  .devlog-arrow {
+    width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,.25);
+    background: rgba(255,255,255,.08); color: #fff; font-size: 20px; cursor: pointer; transition: .2s;
+  }
+  .devlog-arrow:hover { background: rgba(255,255,255,.18); }
+  .devlog-row {
+    display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory;
+    padding-bottom: 6px; scrollbar-width: none;
+  }
+  .devlog-row::-webkit-scrollbar { display: none; }
+  .devlog-card {
+    scroll-snap-align: start; flex: 0 0 min(300px, 84vw);
+    background: var(--card); border-radius: var(--r-lg); padding: 26px 24px;
+    display: flex; flex-direction: column; gap: 10px; box-shadow: var(--shadow-md);
+  }
+  .devlog-card .dl-em { font-size: 30px; }
+  .devlog-card h4 { font-family: var(--font-display); font-weight: 800; font-size: 1.15rem; color: var(--ink); }
+  .devlog-card p { font-size: .96rem; color: var(--ink-2); font-weight: 600; line-height: 1.55; }
+  .devlog-card p a { color: var(--primary); font-weight: 800; }
 
   .games-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
   .game-card {
@@ -49,12 +82,22 @@
 
   /* Who we are (studio) */
   .who { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .who-panel {
+    position: relative; width: 100%; overflow: hidden;
+    background: var(--card); border-radius: var(--r-xl); box-shadow: var(--shadow-lg);
+    padding: clamp(48px, 7vw, 80px) clamp(24px, 6vw, 60px);
+  }
+  .who-panel::before {
+    content: ""; position: absolute; top: -120px; right: -120px; width: 320px; height: 320px;
+    border-radius: 50%; background: radial-gradient(circle, var(--primary-2), transparent 70%);
+    opacity: .18; pointer-events: none;
+  }
   .who-pill {
     position: relative; display: inline-flex; align-items: center; justify-content: center;
     padding: 16px 46px; border-radius: 999px; margin-bottom: clamp(28px, 4vw, 44px);
-    background: linear-gradient(180deg, #ffffff, var(--card-2));
-    box-shadow: var(--shadow-md); border: 1px solid var(--line);
-    font-family: var(--font-display); font-weight: 800; color: var(--primary);
+    background: linear-gradient(150deg, var(--primary-2), var(--primary));
+    box-shadow: var(--shadow-pop);
+    font-family: var(--font-display); font-weight: 800; color: #fff;
     font-size: clamp(1.6rem, 3.2vw, 2.4rem); letter-spacing: -.01em; z-index: 1; white-space: nowrap;
   }
   .who-pill .puff { position: absolute; background: #fff; border-radius: 50%; box-shadow: var(--shadow-sm); z-index: -1; }
@@ -63,17 +106,20 @@
   .who-pill .p3 { width: 48px; height: 48px; right: -18px; bottom: 2px; }
   .who-pill .p4 { width: 28px; height: 28px; right: 16px; top: -10px; }
   .who-story {
-    max-width: 60ch; margin: 0 auto clamp(40px, 5vw, 60px);
+    max-width: 60ch; margin: 0 auto clamp(40px, 5vw, 60px); position: relative; z-index: 1;
     font-size: clamp(1.05rem, 1.6vw, 1.28rem); line-height: 1.7; font-weight: 600; color: var(--ink);
     text-wrap: pretty;
   }
   .who-story .hl { color: var(--primary); font-weight: 800; }
-  .who-member { display: flex; flex-direction: column; align-items: center; gap: 14px; }
-  .who-av-ring { padding: 6px; background: #fff; border-radius: 50%; box-shadow: var(--shadow-md); }
-  .who-av-ring img { display: block; width: 140px; height: 140px; border-radius: 50%; object-fit: cover; background: var(--card-2); }
-  .who-member b { font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; color: var(--ink); }
+  .who-member { display: flex; flex-direction: column; align-items: center; gap: 14px; position: relative; z-index: 1; }
+  .who-av-ring {
+    padding: 6px; border-radius: 50%; background: linear-gradient(150deg, var(--primary-2), var(--primary));
+    box-shadow: var(--shadow-pop);
+  }
+  .who-av-ring img { display: block; width: 160px; height: 160px; border-radius: 50%; object-fit: cover; background: var(--card-2); border: 4px solid #fff; }
+  .who-member b { font-family: var(--font-display); font-weight: 800; font-size: 1.6rem; color: var(--ink); }
   .who-member small { font-weight: 800; font-size: .98rem; color: var(--primary); }
-  .who-foot { margin-top: clamp(30px, 4vw, 46px); font-weight: 700; color: var(--ink-2); font-size: 1rem; }
+  .who-foot { margin-top: clamp(30px, 4vw, 46px); font-weight: 700; color: var(--ink-2); font-size: 1rem; position: relative; z-index: 1; }
   .who-foot b { color: var(--ink); font-weight: 800; }
 </style>
 <template id="__bundler_thumbnail">
@@ -138,8 +184,46 @@
   </div>
 </section>
 
+<section class="devlog-band" id="devlog">
+  <div class="wrap">
+    <div class="devlog-head">
+      <div>
+        <span class="eyebrow" style="color:#fff;">Dev log</span>
+        <h2 style="font-size:clamp(1.9rem,3.6vw,2.6rem); margin-top:14px; color:#fff;">Building it in the open.</h2>
+      </div>
+      <div class="devlog-nav">
+        <button class="devlog-arrow" id="devlogPrev" aria-label="Previous">‹</button>
+        <button class="devlog-arrow" id="devlogNext" aria-label="Next">›</button>
+      </div>
+    </div>
+    <div class="devlog-row" id="devlogRow">
+      <article class="devlog-card">
+        <span class="dl-em">🧑‍🎨</span>
+        <h4>One-person team</h4>
+        <p>Every screen, palette and sound on this site was made by a single dev — no studio, no investors, just a lot of late nights.</p>
+      </article>
+      <article class="devlog-card">
+        <span class="dl-em">🎨</span>
+        <h4>1,200+ canvases</h4>
+        <p>The library keeps growing every week, with new color-by-number scenes across mandalas, florals and seasonal drops.</p>
+      </article>
+      <article class="devlog-card">
+        <span class="dl-em">🛠️</span>
+        <h4>Always shipping</h4>
+        <p>Bugs get fixed fast and features ship often — this is a game that's actively cooked, not left to simmer.</p>
+      </article>
+      <article class="devlog-card">
+        <span class="dl-em">💌</span>
+        <h4>Say hi</h4>
+        <p>Got feedback, found a bug, or just want to say hi? <a href="mailto:trirongames@gmail.com">trirongames@gmail.com</a> always gets read.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="studio" style="padding-top:0;">
   <div class="wrap">
+    <div class="who-panel">
     <div class="who">
       <div class="who-pill">
         <span class="puff p1"></span><span class="puff p2"></span>
@@ -159,6 +243,7 @@
         <small>Dev / Creator</small>
       </div>
       <p class="who-foot">That's the whole crew — <b>for now.</b> 👋</p>
+    </div>
     </div>
   </div>
 </section>
@@ -203,6 +288,18 @@
     </div>
   </div>
 </footer>
+
+<script>
+  (function () {
+    const row = document.getElementById('devlogRow');
+    const prev = document.getElementById('devlogPrev');
+    const next = document.getElementById('devlogNext');
+    if (!row || !prev || !next) return;
+    const step = () => Math.min(300, row.clientWidth * 0.85);
+    prev.addEventListener('click', () => row.scrollBy({ left: -step(), behavior: 'smooth' }));
+    next.addEventListener('click', () => row.scrollBy({ left: step(), behavior: 'smooth' }));
+  })();
+</script>
 
 </body>
 </html>

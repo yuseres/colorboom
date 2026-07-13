@@ -97,7 +97,7 @@ const FEATURES = [
   {
     eyebrow: "Compete",
     title: "Climb the\nweekly ranks.",
-    body: "Paint fast, paint beautifully, and rise up the global leaderboard. Earn badges, stars and frames that show off your style to a community of millions.",
+    body: "Paint fast, paint beautifully, and rise up the weekly leaderboard. Earn badges, stars and frames that show off your style as you climb the ranks.",
     pills: [["🏆", "Weekly ranks"], ["⭐", "Earn stars"], ["🏅", "Badges & frames"]],
     screen: "ranks", flip: false,
     float: { em: "🏆", big: "#54", small: "You're rising!", pos: { top: "6%", right: "clamp(-8%, -3vw, 2%)" } },
