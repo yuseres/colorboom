@@ -351,27 +351,6 @@ body.no-confetti .dot, body.no-confetti .sq { display: none; }
 }
 
 /* ============================================================
-   GAMIFICATION BAND
-   ============================================================ */
-.gband { background: var(--band); border-radius: var(--r-xl); padding: clamp(40px, 5vw, 70px); box-shadow: var(--glow); }
-.gband-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-.gtile {
-  background: var(--card); border-radius: var(--r-md); padding: 26px 22px;
-  box-shadow: var(--shadow-sm); border: 1px solid var(--line);
-  display: flex; flex-direction: column; gap: 8px;
-  transition: transform .3s cubic-bezier(.34,1.56,.64,1), box-shadow .3s;
-}
-.gtile:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
-.gtile .ic { width: 52px; height: 52px; border-radius: 15px; display: grid; place-items: center; font-size: 27px; margin-bottom: 6px; }
-.gtile h3 { font-size: 1.35rem; }
-.gtile p { font-size: .95rem; color: var(--ink-2); font-weight: 600; }
-.ic-gold { background: color-mix(in srgb, var(--gold) 22%, var(--card)); }
-.ic-blue { background: color-mix(in srgb, var(--blue) 22%, var(--card)); }
-.ic-pink { background: color-mix(in srgb, var(--pink) 22%, var(--card)); }
-.ic-green{ background: color-mix(in srgb, var(--green) 22%, var(--card)); }
-@media (max-width: 820px){ .gband-grid { grid-template-columns: repeat(2,1fr); } }
-
-/* ============================================================
    WHO WE ARE
    ============================================================ */
 .who { display: flex; flex-direction: column; align-items: center; text-align: center; }
@@ -409,24 +388,6 @@ body.no-confetti .dot, body.no-confetti .sq { display: none; }
 .who-member small { font-weight: 800; font-size: 1rem; color: var(--primary); letter-spacing: .01em; white-space: nowrap; }
 .who-foot { margin-top: clamp(34px, 5vw, 54px); font-weight: 700; color: var(--ink-2); font-size: 1.02rem; }
 .who-foot b { color: var(--ink); font-weight: 800; }
-
-/* ============================================================
-   DOWNLOAD CTA
-   ============================================================ */
-.cta {
-  position: relative; overflow: hidden;
-  background: linear-gradient(155deg, var(--primary-2), var(--primary));
-  border-radius: var(--r-xl); padding: clamp(48px, 6vw, 84px);
-  color: #fff; box-shadow: var(--shadow-lg);
-}
-.cta-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 40px; align-items: center; position: relative; z-index: 2; }
-.cta h2 { color: #fff; font-size: clamp(2.2rem, 4.6vw, 3.6rem); }
-.cta p { color: rgba(255,255,255,.92); font-size: 1.15rem; margin-top: 14px; max-width: 38ch; }
-.cta .badge { background: rgba(0,0,0,.24); }
-.cta-phone { position: relative; display: grid; place-items: center; min-height: 300px; }
-.cta-phone .screen { width: 240px; border-color: rgba(255,255,255,.85); }
-.cta-deco { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
-@media (max-width: 820px){ .cta-grid { grid-template-columns: 1fr; } .cta-phone { display: none; } }
 
 /* ============================================================
    FOOTER

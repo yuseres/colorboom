@@ -136,59 +136,23 @@ const FEATURES = [{
   },
   blob: "var(--purple)"
 }, {
-  eyebrow: "Daily rewards",
-  title: "Streaks &\nrewards that stick.",
-  body: "Log in daily to grow your streak, claim coins and gems, and unlock rarer paint boosters. Daily missions hand you bite-size goals so every session pays off.",
-  pills: [["🔥", "Streak boosters"], ["🪙", "Daily coins"], ["🎁", "Weekly calendar"]],
+  eyebrow: "Rewards & ranks",
+  title: "Streaks, rewards\n& weekly ranks.",
+  body: "Log in daily to grow your streak, claim coins and gems, and knock out bite-size missions. Then paint fast and beautifully to climb the weekly leaderboard, earning badges, stars and frames along the way.",
+  pills: [["🔥", "Streak boosters"], ["🎁", "Daily rewards"], ["🏆", "Weekly ranks"]],
   screen: "daily-rewards",
   flip: true,
-  float: {
-    em: "🔥",
-    big: "Day 2",
-    small: "Streak active!",
-    pos: {
-      bottom: "8%",
-      right: "clamp(-8%, -3vw, 2%)"
-    }
-  },
-  blob: "var(--primary)",
-  mini: "missions"
-}, {
-  eyebrow: "Compete",
-  title: "Climb the\nweekly ranks.",
-  body: "Paint fast, paint beautifully, and rise up the weekly leaderboard. Earn badges, stars and frames that show off your style as you climb the ranks.",
-  pills: [["🏆", "Weekly ranks"], ["⭐", "Earn stars"], ["🏅", "Badges & frames"]],
-  screen: "ranks",
-  flip: false,
   float: {
     em: "🏆",
     big: "#54",
     small: "You're rising!",
     pos: {
-      top: "6%",
+      bottom: "8%",
       right: "clamp(-8%, -3vw, 2%)"
     }
   },
   blob: "var(--gold)",
-  mini: "profile"
-}, {
-  eyebrow: "Make it yours",
-  title: "Themes, effects\n& fill magic.",
-  body: "Switch themes, swap highlight colors, and equip fill effects like Sparkle, Ripple and Splash. Color Boom adapts to your vibe — light, sunset or midnight.",
-  pills: [["🎨", "5 themes"], ["💫", "Fill effects"], ["🖌️", "Custom frames"]],
-  screen: "settings",
-  flip: true,
-  float: {
-    em: "💫",
-    big: "Sparkle",
-    small: "Effect equipped",
-    pos: {
-      bottom: "6%",
-      left: "clamp(-8%, -3vw, 2%)"
-    }
-  },
-  blob: "var(--blue)",
-  mini: "game-shop"
+  mini: "ranks"
 }];
 
 // Claudiu's avatar (illustrated portrait).
@@ -298,7 +262,7 @@ function Hero() {
 Object.assign(window, {
   Hero
 });
-/* sections.jsx — nav, proof, features, gamification, studio, cta, footer */
+/* sections.jsx — nav, proof, features, footer */
 
 function Nav() {
   return /*#__PURE__*/React.createElement("nav", {
@@ -323,14 +287,12 @@ function Nav() {
   })), /*#__PURE__*/React.createElement("span", null, "Color Boom")), /*#__PURE__*/React.createElement("div", {
     className: "nav-links"
   }, /*#__PURE__*/React.createElement("a", {
-    href: "#game"
-  }, "The Game"), /*#__PURE__*/React.createElement("a", {
     href: "#features"
-  }, "Features"), /*#__PURE__*/React.createElement("a", {
-    href: "#download"
-  }, "Download")), /*#__PURE__*/React.createElement("button", {
+  }, "Features")), /*#__PURE__*/React.createElement("a", {
     className: "nav-cta",
-    onClick: () => document.getElementById("download")?.scrollIntoView()
+    href: PLAY_STORE_URL,
+    target: "_blank",
+    rel: "noopener"
   }, "Get the app"))));
 }
 function Proof() {
@@ -448,125 +410,10 @@ function Features() {
     idx: i
   }))));
 }
-function Gamification() {
-  const tiles = [{
-    ic: "🪙",
-    cls: "ic-gold",
-    h: "Coins",
-    p: "Spend on canvases, hints and paint boosters in the in-game shop."
-  }, {
-    ic: "💎",
-    cls: "ic-blue",
-    h: "Gems",
-    p: "Premium currency for art packs, frames and rare fill effects."
-  }, {
-    ic: "🔥",
-    cls: "ic-pink",
-    h: "Streaks",
-    p: "Keep your daily streak alive for ever-rarer rewards."
-  }, {
-    ic: "🏆",
-    cls: "ic-green",
-    h: "Ranks",
-    p: "Battle for the top of the weekly global leaderboard."
-  }];
-  return /*#__PURE__*/React.createElement("section", {
-    className: "section",
-    id: "game",
-    style: {
-      paddingTop: 0
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "wrap"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "gband reveal"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "sec-head",
-    style: {
-      marginBottom: 34,
-      maxWidth: 620
-    }
-  }, /*#__PURE__*/React.createElement(Eyebrow, null, "A whole little economy"), /*#__PURE__*/React.createElement("h2", {
-    style: {
-      fontSize: "clamp(1.9rem,3.6vw,2.9rem)"
-    }
-  }, "Earn it, spend it, show it off.")), /*#__PURE__*/React.createElement("div", {
-    className: "gband-grid"
-  }, tiles.map((t, i) => /*#__PURE__*/React.createElement("div", {
-    className: "gtile reveal",
-    key: i,
-    style: {
-      transitionDelay: `${i * 0.07}s`
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "ic " + t.cls
-  }, t.ic), /*#__PURE__*/React.createElement("h3", null, t.h), /*#__PURE__*/React.createElement("p", null, t.p)))))));
-}
-function CTA() {
-  return /*#__PURE__*/React.createElement("section", {
-    className: "section",
-    id: "download",
-    style: {
-      paddingTop: 0
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "wrap"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "cta reveal"
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "dot",
-    style: {
-      width: 120,
-      height: 120,
-      background: "rgba(255,255,255,.14)",
-      top: "-30px",
-      left: "-20px"
-    }
-  }), /*#__PURE__*/React.createElement("span", {
-    className: "sq",
-    style: {
-      width: 60,
-      height: 60,
-      background: "rgba(255,255,255,.12)",
-      bottom: "20px",
-      left: "32%",
-      transform: "rotate(20deg)"
-    }
-  }), /*#__PURE__*/React.createElement("span", {
-    className: "dot",
-    style: {
-      width: 26,
-      height: 26,
-      background: "rgba(255,255,255,.5)",
-      top: "30%",
-      left: "46%"
-    }
-  }), /*#__PURE__*/React.createElement("div", {
-    className: "cta-grid"
-  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Eyebrow, null, /*#__PURE__*/React.createElement("span", {
-    style: {
-      color: "#fff"
-    }
-  }, "Free to play")), /*#__PURE__*/React.createElement("h2", {
-    style: {
-      marginTop: 14
-    }
-  }, "Your next favorite way to unwind."), /*#__PURE__*/React.createElement("p", null, "Download Color Boom free on Google Play. Your first masterpiece is one tap away."), /*#__PURE__*/React.createElement("div", {
-    style: {
-      marginTop: 28
-    }
-  }, /*#__PURE__*/React.createElement(AppBadges, null))), /*#__PURE__*/React.createElement("div", {
-    className: "cta-phone"
-  }, /*#__PURE__*/React.createElement(Screen, {
-    src: "my-feed.png",
-    className: "bob",
-    alt: "Start painting"
-  }))))));
-}
 function Footer() {
   const cols = [{
     h: "Game",
-    links: [["Features", "#features"], ["Canvases", "#features"], ["Daily rewards", "#game"], ["Leaderboards", "#game"]]
+    links: [["Features", "#features"], ["Canvases", "#features"], ["Get the app", PLAY_STORE_URL]]
   }, {
     h: "Studio",
     links: [["About us", "../../index.html#studio"], ["Contact", "mailto:trirongames@gmail.com"]]
@@ -621,8 +468,6 @@ Object.assign(window, {
   Nav,
   Proof,
   Features,
-  Gamification,
-  CTA,
   Footer
 });
 /* app.jsx — root. Defaults (theme petal, highlight #F97A2E, confetti on)
@@ -639,6 +484,6 @@ function App() {
     className: "blob-c"
   }), /*#__PURE__*/React.createElement("i", {
     className: "blob-d"
-  })), /*#__PURE__*/React.createElement(Nav, null), /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(Proof, null), /*#__PURE__*/React.createElement(Features, null), /*#__PURE__*/React.createElement(Gamification, null), /*#__PURE__*/React.createElement(CTA, null), /*#__PURE__*/React.createElement(Footer, null));
+  })), /*#__PURE__*/React.createElement(Nav, null), /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(Proof, null), /*#__PURE__*/React.createElement(Features, null), /*#__PURE__*/React.createElement(Footer, null));
 }
 ReactDOM.createRoot(document.getElementById("root")).render(/*#__PURE__*/React.createElement(App, null));

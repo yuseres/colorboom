@@ -10,8 +10,6 @@ function App() {
       <Hero />
       <Proof />
       <Features />
-      <Gamification />
-      <CTA />
       <Footer />
     </>
   );
