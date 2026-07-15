@@ -22,7 +22,7 @@ window.TRIRON_GAMES = [
     status: "live",
     accent: "#F97A2E",
     icon: "games/color-boom/assets/logo.png",
-    banner: "games/color-boom/assets/screens/library.png",
+    banner: "games/color-boom/assets/promo-art.jpg",
     genre: "Cozy color-by-number",
     blurb: "The cozy color-by-number game where every tile you fill bursts into art. Paint, collect rewards, and climb the weekly ranks.",
     url: "games/color-boom/index.html",
